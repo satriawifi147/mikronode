@@ -29,9 +29,9 @@
 
          });
 
-         chan.write('/ip/firewall/print');
+         chan2.write('/ip/firewall/print');
 
-         chan.done.subscribe(function(data){
+         chan2.done.subscribe(function(data){
 
               // data is all of the sentences in an array.
               data.forEach(function(item) {
@@ -125,7 +125,7 @@ With the above code, the following is API description. conn is Connection object
       This is handy when following trailing output from a listen command, where the data could be endless.
   * channel.trap <Observable>
       Any traps that occur on a channel can be captured in this observable stream.
-  * chanenl.sync(b)
+  * channel.sync(b)
       If b == true, each command is run synchronously. Otherwise commands are executed as they are passed.
   * channel.closeOnDone(b)
       If b == true, when a done event occurs, close the channel after all commands queued have been executed.
